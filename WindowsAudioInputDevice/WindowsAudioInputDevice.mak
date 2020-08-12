@@ -14,25 +14,24 @@ TARGETOS = WINNT
 #TARGETOS = WIN95
 #APPVER = 4.0
 
-!include    <ntwin32.mak>
+#!include    <ntwin32.mak>
 
 UI_OPTS =		$(guilflags) $(guilibsdll)
 # Use the following to get a console (e.g., for debugging):
 CONSOLE_UI_OPTS =		$(conlflags) $(conlibsdll)
 CPU=i386
 
-TOOLS32	=		c:\Program Files\DevStudio\Vc
-COMPILE_OPTS =		$(INCLUDES) $(cdebug) $(cflags) $(cvarsdll) -I. -I"$(TOOLS32)\include"
+COMPILE_OPTS =		$(INCLUDES) $(cdebug) $(cflags) $(cvarsdll) -I.
 C =			c
-C_COMPILER =		"$(TOOLS32)\bin\cl"
+C_COMPILER =		cl
 C_FLAGS =		$(COMPILE_OPTS)
 CPP =			cpp
 CPLUSPLUS_COMPILER =	$(C_COMPILER)
 CPLUSPLUS_FLAGS =	$(COMPILE_OPTS)
 OBJ =			obj
-LINK =			$(link) -out:
+LINK =			link -out:
 LIBRARY_LINK =		lib -out:
-LINK_OPTS_0 =		$(linkdebug) msvcirt.lib
+LINK_OPTS_0 =		$(linkdebug) msvcrt.lib ws2_32.lib
 LIBRARY_LINK_OPTS =	
 LINK_OPTS =		$(LINK_OPTS_0) $(UI_OPTS)
 CONSOLE_LINK_OPTS =	$(LINK_OPTS_0) $(CONSOLE_UI_OPTS)

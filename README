@@ -1,2 +1,5 @@
+Branch of live555 (2020.08.05 release) fixed for windows build
+Tested with vs 2019, sdk 10.0.19041.0
+
 For documentation and instructions for building this software,
 see <http://www.live555.com/liveMedia/>
